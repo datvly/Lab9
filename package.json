@@ -1,0 +1,23 @@
+{
+    "name": "lab9",
+    "version": "1.0.0",
+    "description": "Lab9 full-stack application",
+    "private": true,
+    "workspaces": [
+      "frontend",
+      "backend"
+    ],
+    "scripts": {
+      "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+      "start:frontend": "cd frontend && npm run dev",
+      "start:backend": "cd backend && npm run dev",
+      "build": "npm run build:frontend",
+      "build:frontend": "cd frontend && npm run build",
+      "install:all": "npm install && npm run install:frontend && npm run install:backend",
+      "install:frontend": "cd frontend && npm install",
+      "install:backend": "cd backend && npm install"
+    },
+    "devDependencies": {
+      "concurrently": "^8.2.2"
+    }
+  }
